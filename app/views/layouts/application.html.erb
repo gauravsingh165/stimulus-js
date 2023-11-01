@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StimulusJs</title>
+    <%= favicon_link_tag 'yt.png' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body style="background-color:powderblue">
+    <div style="text-align: center;">
+      <div data-controller="hello">
+        <input data-hello-target="name" type="text">
+
+        <button data-action="click->hello#greet">
+          Greet
+        </button>
+
+        <span data-hello-target="output">
+        </span>
+      </div>
+      <%= yield %>
+    </div>  
+  </body>
+</html>
